@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/topNewsFragment">
+    <fragment
+        android:id="@+id/topNewsFragment"
+        android:name="com.example.newsapp.TopNewsFragment"
+        android:label="fragment_top_news"
+        tools:layout="@layout/fragment_top_news" >
+        <action
+            android:id="@+id/action_topNewsFragment_to_savedNewsFragment"
+            app:destination="@id/savedNewsFragment"
+            app:enterAnim="@anim/push_right_in"
+            app:exitAnim="@anim/push_left_out"
+            app:popEnterAnim="@anim/push_left_in"
+            app:popExitAnim="@anim/push_right_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/savedNewsFragment"
+        android:name="com.example.newsapp.SavedNewsFragment"
+        android:label="fragment_saved_news"
+        tools:layout="@layout/fragment_saved_news" >
+        <action
+            android:id="@+id/action_savedNewsFragment_to_searchNewsFragment"
+            app:destination="@id/searchNewsFragment"
+            app:enterAnim="@anim/push_right_in"
+            app:exitAnim="@anim/push_left_out"
+            app:popEnterAnim="@anim/push_left_in"
+            app:popExitAnim="@anim/push_right_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchNewsFragment"
+        android:name="com.example.newsapp.SearchNewsFragment"
+        android:label="fragment_search_news"
+        tools:layout="@layout/fragment_search_news" />
+</navigation>
