@@ -3,14 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/topNewsFragment">
+    app:startDestination="@id/latestNewsFragment">
     <fragment
-        android:id="@+id/topNewsFragment"
-        android:name="com.example.newsapp.TopNewsFragment"
+        android:id="@+id/latestNewsFragment"
+        android:name="com.example.newsapp.LatestNewsFragment"
         android:label="fragment_top_news"
-        tools:layout="@layout/fragment_top_news" >
+        tools:layout="@layout/fragment_latest_news" >
         <action
-            android:id="@+id/action_topNewsFragment_to_savedNewsFragment"
+            android:id="@+id/action_latestNewsFragment_to_savedNewsFragment"
             app:destination="@id/savedNewsFragment"
             app:enterAnim="@anim/push_right_in"
             app:exitAnim="@anim/push_left_out"
