@@ -1,26 +1,25 @@
 package com.example.newsapp
 
-import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
-import com.example.newsapp.RetrofitInstance.Companion.api
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 
 class NewsActivity : AppCompatActivity() {
+
+    lateinit var myViewModel: ArticleViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val myRepository = ArticleRepository(/*ArticleDatabase(this)*/)
+        val myArticleViewModelFactory = ArticleViewModelFactory(myRepository)
+        myViewModel = ViewModelProvider(this, myArticleViewModelFactory).get(ArticleViewModel::class.java)
         bottomNavigationMenu.setupWithNavController(navHostFragment.findNavController())
 
-        GlobalScope.launch(Dispatchers.IO) {
-            Log.i("test", "${api.getLatestNews()}")
-        }
 
     }
 }

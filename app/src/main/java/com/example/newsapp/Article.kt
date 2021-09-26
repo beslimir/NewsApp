@@ -6,13 +6,14 @@ import androidx.room.PrimaryKey
 @Entity(
     tableName = "articles"
 )
-data class Result(
+data class Article(
+    @PrimaryKey(autoGenerate = true)
+    val id: Int? = null,
     val content: Any,
     val creator: List<String>, //list of strings - publishers
     val description: String,
     val image_url: String,
     val keywords: Any,
-    @PrimaryKey
     val link: String,
     val pubDate: String,
     val source_id: String,

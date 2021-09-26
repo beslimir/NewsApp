@@ -1,12 +1,10 @@
 package com.example.newsapp
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 
-class SearchNewsFragment : Fragment(R.layout.fragment_search_news) {
+class ArticleFragment : Fragment(R.layout.fragment_article) {
 
     lateinit var myViewModel: ArticleViewModel
 
@@ -14,5 +12,4 @@ class SearchNewsFragment : Fragment(R.layout.fragment_search_news) {
         super.onViewCreated(view, savedInstanceState)
         myViewModel = (activity as NewsActivity).myViewModel
     }
-
 }
