@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.newsapp.ArticleViewModel
 import com.example.newsapp.ArticlesAdapter
@@ -27,6 +28,16 @@ class LatestNewsFragment : Fragment(R.layout.fragment_latest_news) {
         rvLatestNews.apply {
             adapter = myAdapter
             layoutManager = LinearLayoutManager(activity)
+        }
+
+        myAdapter.setOnItemClickListener { myArticle ->
+            val bundle = Bundle().apply {
+                putSerializable("article", myArticle)
+            }
+            findNavController().navigate(
+                R.id.action_latestNewsFragment_to_articleFragment,
+                bundle
+            )
         }
 
         myViewModel.latestNews.observe(viewLifecycleOwner, Observer {

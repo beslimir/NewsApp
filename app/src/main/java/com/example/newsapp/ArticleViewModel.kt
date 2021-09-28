@@ -4,6 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.newsapp.api.NewsResponse
+import com.example.newsapp.utils.Constants.Companion.COUNTRY_XY
 import com.example.newsapp.utils.ResponsesResource
 import kotlinx.coroutines.launch
 import retrofit2.Response
@@ -15,7 +16,7 @@ class ArticleViewModel(val articleRepository: ArticleRepository): ViewModel() {
     val searchNews: MutableLiveData<ResponsesResource<NewsResponse>> = MutableLiveData()
 
     init {
-        getLatestNews("us")
+        getLatestNews(COUNTRY_XY)
     }
 
     /* Latest news */

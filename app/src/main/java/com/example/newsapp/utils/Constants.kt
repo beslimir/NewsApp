@@ -7,6 +7,7 @@ class Constants {
         val API_KEY = "xxx"
         val LOG_TAG = "testingApp"
         val DELAY_TIME = 750L
+        val COUNTRY_XY = "de"
     }
 
 

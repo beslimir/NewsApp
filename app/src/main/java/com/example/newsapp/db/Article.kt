@@ -2,6 +2,7 @@ package com.example.newsapp.db
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import java.io.Serializable
 
 @Entity(
     tableName = "articles"
@@ -19,4 +20,4 @@ data class Article(
     val source_id: String,
     val title: String,
     val video_url: Any
-)
+): Serializable
