@@ -3,6 +3,8 @@ package com.example.newsapp
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.newsapp.api.NewsResponse
+import com.example.newsapp.utils.ResponsesResource
 import kotlinx.coroutines.launch
 import retrofit2.Response
 

@@ -1,14 +1,16 @@
-package com.example.newsapp
+package com.example.newsapp.ui
 
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.newsapp.Constants.Companion.LOG_TAG
+import com.example.newsapp.ArticleViewModel
+import com.example.newsapp.ArticlesAdapter
+import com.example.newsapp.R
+import com.example.newsapp.utils.ResponsesResource
+import com.example.newsapp.utils.Constants.Companion.LOG_TAG
 import kotlinx.android.synthetic.main.fragment_latest_news.*
 
 class LatestNewsFragment : Fragment(R.layout.fragment_latest_news) {
