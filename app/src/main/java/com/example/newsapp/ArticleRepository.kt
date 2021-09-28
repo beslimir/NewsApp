@@ -13,4 +13,6 @@ class ArticleRepository(val db: ArticleDatabase) {
 
     suspend fun getLatestNews(country: String) = RetrofitInstance.api.getLatestNews(API_KEY, country)
 
+    suspend fun getSearchNews(query: String) = RetrofitInstance.api.getSearchNews(API_KEY, query)
+
 }

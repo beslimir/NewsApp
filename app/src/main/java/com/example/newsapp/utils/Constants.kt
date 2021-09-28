@@ -6,6 +6,7 @@ class Constants {
         val BASE_API_URL = "https://newsdata.io/"
         val API_KEY = "xxx"
         val LOG_TAG = "testingApp"
+        val DELAY_TIME = 750L
     }
 
 

@@ -19,5 +19,13 @@ interface NewsAPI {
         countryCode: String = "us"
     ): Response<NewsResponse>
 
+    @GET("api/1/news")
+    suspend fun getSearchNews(
+        @Query("apikey")
+        apiKey: String = API_KEY,
+        @Query("q")
+        query: String
+    ): Response<NewsResponse>
+
 
 }

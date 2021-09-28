@@ -9,8 +9,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.newsapp.ArticleViewModel
 import com.example.newsapp.ArticlesAdapter
 import com.example.newsapp.R
-import com.example.newsapp.utils.ResponsesResource
 import com.example.newsapp.utils.Constants.Companion.LOG_TAG
+import com.example.newsapp.utils.ResponsesResource
 import kotlinx.android.synthetic.main.fragment_latest_news.*
 
 class LatestNewsFragment : Fragment(R.layout.fragment_latest_news) {
@@ -20,6 +20,7 @@ class LatestNewsFragment : Fragment(R.layout.fragment_latest_news) {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+
         myViewModel = (activity as NewsActivity).myViewModel
 
         myAdapter = ArticlesAdapter()
@@ -50,11 +51,11 @@ class LatestNewsFragment : Fragment(R.layout.fragment_latest_news) {
     }
 
     private fun hideProgressBar() {
-        pbProgressBar.visibility = View.INVISIBLE
+        pbLatestNews.visibility = View.INVISIBLE
     }
 
     private fun showProgressBar() {
-        pbProgressBar.visibility = View.VISIBLE
+        pbLatestNews.visibility = View.VISIBLE
     }
 
 }
