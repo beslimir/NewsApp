@@ -1,7 +1,7 @@
 package com.example.newsapp.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
@@ -21,7 +21,7 @@ class NewsActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val myRepository = ArticleRepository(ArticleDatabase(this))
-        val myArticleViewModelFactory = ArticleViewModelFactory(myRepository)
+        val myArticleViewModelFactory = ArticleViewModelFactory(application, myRepository)
         myViewModel = ViewModelProvider(this, myArticleViewModelFactory).get(ArticleViewModel::class.java)
         bottomNavigationMenu.setupWithNavController(navHostFragment.findNavController())
 

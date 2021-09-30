@@ -3,6 +3,7 @@ package com.example.newsapp.ui
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -65,13 +66,19 @@ class SearchNewsFragment : Fragment(R.layout.fragment_search_news) {
                 is ResponsesResource.SuccessResponse -> {
                     hideProgressBar()
                     it.body?.let { newsResponse ->
-                        myAdapter.differ.submitList(newsResponse.results)
+                        if (newsResponse.totalResults == 0) {
+                            Log.d(Constants.LOG_TAG, "No results: $newsResponse")
+                            Toast.makeText(activity, "Currently, there are no results available :(", Toast.LENGTH_LONG).show()
+                        } else {
+                            myAdapter.differ.submitList(newsResponse.results)
+                        }
                     }
                 }
                 is ResponsesResource.ErrorResponse -> {
                     hideProgressBar()
                     it.msg?.let { message ->
                         Log.d(Constants.LOG_TAG, "Error: $message")
+                        Toast.makeText(activity, "An error occurred: $message", Toast.LENGTH_SHORT).show()
                     }
                 }
                 is ResponsesResource.Loading -> {
