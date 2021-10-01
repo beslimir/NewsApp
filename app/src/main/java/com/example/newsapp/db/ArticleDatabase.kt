@@ -10,7 +10,7 @@ import com.example.newsapp.utils.TypeConverter
 
 @Database(
     entities = [Article::class],
-    version = 2
+    version = 3
 )
 @TypeConverters(TypeConverter::class)
 abstract class ArticleDatabase: RoomDatabase() {
